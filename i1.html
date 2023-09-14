@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Дильмухамедова Залина</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+        #receipt {
+            border: 1px solid black;
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+            background-color: white;
+            margin: 50px auto;
+        }
+    </style>
+    <script>
+        function calculateDiscount() {
+            var totalCost = parseFloat(prompt("Введите общую сумму покупки:"));
+            var discount = parseFloat(prompt("Введите скидку в процентах (от 1 до 5):"));
+
+            if (isNaN(totalCost) || isNaN(discount)) {
+                alert("Пожалуйста, введите числовое значение.");
+                return;
+            }
+
+            if (discount < 1 || discount > 5) {
+                alert("Скидка должна быть от 1 до 5 %.");
+                return;
+            }
+
+            var discountAmount = totalCost * (discount / 100);
+            var discountedCost = totalCost - discountAmount;
+
+            var receipt = document.getElementById("receipt");
+            receipt.innerHTML = "<h2>ООО ЕВРОТОРГ</h2>";
+            receipt.innerHTML += "<p>Спасибо за покупку</p>";
+            receipt.innerHTML += "<p>Дата и время выдачи чека: " + new Date().toLocaleString() + "</p>";
+            receipt.innerHTML += "<hr>";
+            receipt.innerHTML += "<p>Общая стоимость покупки: " + totalCost.toFixed(2) + " руб.</p>";
+            receipt.innerHTML += "<p>Скидка: " + discountAmount.toFixed(2) + " руб.</p>";
+            receipt.innerHTML += "<p>Стоимость покупки со скидкой: " + discountedCost.toFixed(2) + " руб.</p>";
+        }
+    </script>
+</head>
+<body>
+    <h1>Кассовый чек</h1>
+    <button onclick="calculateDiscount()">Рассчитать скидку</button>
+    <div id="receipt"></div>
+</body>
+</html>

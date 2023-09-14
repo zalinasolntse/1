@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Дильмухамедова Залина</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .task {
+            margin-bottom: 30px;
+        }
+
+        .task p {
+            margin-bottom: 10px;
+        }
+
+        .task img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .result {
+            margin-top: 30px;
+        }
+
+        .result p {
+            margin-bottom: 10px;
+        }
+
+        .developer-info {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Решение задач 6 вариант</h1>
+
+    <div class="task">
+        <h2>Задача 1</h2>
+        <p>Найти объем и площадь боковой поверхности параллелепипеда со сторонами a, b, c.</p>
+        <p>Значения a, b, c:</p>
+        <script>
+            var a = parseFloat(prompt('Введите значение a'));
+            var b = parseFloat(prompt('Введите значение b'));
+            var c = parseFloat(prompt('Введите значение c'));
+
+            document.write("<p>a = " + a + "</p>");
+            document.write("<p>b = " + b + "</p>");
+            document.write("<p>c = " + c + "</p>");
+
+            var volume = a * b * c;
+            var surfaceArea = 2 * (a * b + b * c + a * c);
+
+            document.write("<p>Объем: " + volume + "</p>");
+            document.write("<p>Площадь боковой поверхности: " + surfaceArea + "</p>");
+        </script>
+    </div>
+
+    <div class="task">
+        <h2>Задача 2</h2>
+        <p>Посчитать значение переменной b = z * (tg(y) - e^-(x+3)).</p>
+        <p>Значения x, y, z:</p>
+        <script>
+            var x = parseFloat(prompt('Введите значение x'));
+            var y = parseFloat(prompt('Введите значение y'));
+            var z = parseFloat(prompt('Введите значение z'));
+
+            document.write("<p>x = " + x + "</p>");
+            document.write("<p>y = " + y + "</p>");
+            document.write("<p>z = " + z + "</p>");
+
+            var b = z * (Math.tan(y) - Math.exp(-(x + 3)));
+
+            document.write("<p>Значение переменной b: " + b + "</p>");
+        </script>
+    </div>
+
+    <div class="developer-info">
+        <p>Разработчик: [Дильмухамедова Залина]</p>
+    </div>
+</body>
+</html>
